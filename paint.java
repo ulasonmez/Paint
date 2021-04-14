@@ -45,20 +45,41 @@ public class paint extends javax.swing.JFrame {
         jPopupMenu1 = new javax.swing.JPopupMenu();
         jPopupMenu2 = new javax.swing.JPopupMenu();
         jPopupMenu3 = new javax.swing.JPopupMenu();
-        jPanel1 = new javax.swing.JPanel();
-        Siyah = new javax.swing.JButton();
-        Kırmızı = new javax.swing.JButton();
-        siyahkalem = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        kırmızıkalem = new javax.swing.JButton();
-        beyaz = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        beyazkalem = new javax.swing.JButton();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu4 = new javax.swing.JMenu();
+        jMenu5 = new javax.swing.JMenu();
+        jButton1 = new javax.swing.JButton();
+        silgi = new javax.swing.JButton();
         temizle = new javax.swing.JButton();
-        çık = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        arttırma = new javax.swing.JButton();
-        azaltma = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        kalınlıkarttırma = new javax.swing.JButton();
+        kalınlıkazaltma = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        kalemrengimenu = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
+        jMenuItem7 = new javax.swing.JMenuItem();
+        jMenuItem8 = new javax.swing.JMenuItem();
+        jMenuItem9 = new javax.swing.JMenuItem();
+        jMenuItem10 = new javax.swing.JMenuItem();
+        jMenuItem11 = new javax.swing.JMenuItem();
+        arkaplanrengimenu = new javax.swing.JMenu();
+        jMenuItem12 = new javax.swing.JMenuItem();
+        jMenuItem13 = new javax.swing.JMenuItem();
+        jMenuItem14 = new javax.swing.JMenuItem();
+        jMenuItem15 = new javax.swing.JMenuItem();
+        jMenuItem16 = new javax.swing.JMenuItem();
+        jMenuItem17 = new javax.swing.JMenuItem();
+        jMenuItem18 = new javax.swing.JMenuItem();
+        jMenuItem19 = new javax.swing.JMenuItem();
+        jMenuItem20 = new javax.swing.JMenuItem();
+        jMenuItem21 = new javax.swing.JMenuItem();
 
         menu1.setLabel("File");
         menuBar1.add(menu1);
@@ -72,11 +93,34 @@ public class paint extends javax.swing.JFrame {
         menu4.setLabel("Edit");
         menuBar2.add(menu4);
 
+        jMenuItem1.setText("jMenuItem1");
+
+        jMenu4.setText("File");
+        jMenuBar2.add(jMenu4);
+
+        jMenu5.setText("Edit");
+        jMenuBar2.add(jMenu5);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Paint");
 
+        jButton1.setText("jButton1");
+
+        silgi.setText("Silgi");
+        silgi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                silgiActionPerformed(evt);
+            }
+        });
+
+        temizle.setText("Temizle");
+        temizle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                temizleActionPerformed(evt);
+            }
+        });
+
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1760, 730));
         jPanel1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 jPanel1MouseDragged(evt);
@@ -92,236 +136,441 @@ public class paint extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1623, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 741, Short.MAX_VALUE)
+            .addGap(0, 693, Short.MAX_VALUE)
         );
 
-        Siyah.setText("Siyah");
-        Siyah.addActionListener(new java.awt.event.ActionListener() {
+        kalınlıkarttırma.setText("+");
+        kalınlıkarttırma.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SiyahActionPerformed(evt);
+                kalınlıkarttırmaActionPerformed(evt);
             }
         });
 
-        Kırmızı.setText("Kırmızı");
-        Kırmızı.addActionListener(new java.awt.event.ActionListener() {
+        kalınlıkazaltma.setText("-");
+        kalınlıkazaltma.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                KırmızıActionPerformed(evt);
+                kalınlıkazaltmaActionPerformed(evt);
             }
         });
 
-        siyahkalem.setText("Siyah");
-        siyahkalem.addActionListener(new java.awt.event.ActionListener() {
+        jLabel1.setText("Kalınlık:");
+
+        jTextField1.setText("4");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                siyahkalemActionPerformed(evt);
+                jTextField1ActionPerformed(evt);
             }
         });
 
-        jLabel1.setText("Arka Plan Rengi");
+        kalemrengimenu.setText("Kalem Rengi");
 
-        kırmızıkalem.setText("Kırmızı");
-        kırmızıkalem.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem2.setText("Siyah");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kırmızıkalemActionPerformed(evt);
+                jMenuItem2ActionPerformed(evt);
             }
         });
+        kalemrengimenu.add(jMenuItem2);
 
-        beyaz.setText("Beyaz");
-        beyaz.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem3.setText("Beyaz");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                beyazActionPerformed(evt);
+                jMenuItem3ActionPerformed(evt);
             }
         });
+        kalemrengimenu.add(jMenuItem3);
 
-        jLabel2.setText("Kalem Rengi");
-
-        beyazkalem.setText("Beyaz");
-        beyazkalem.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem4.setText("Kırmızı");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                beyazkalemActionPerformed(evt);
+                jMenuItem4ActionPerformed(evt);
             }
         });
+        kalemrengimenu.add(jMenuItem4);
 
-        temizle.setText("Temizle");
-        temizle.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem5.setText("Yeşil");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                temizleActionPerformed(evt);
+                jMenuItem5ActionPerformed(evt);
             }
         });
+        kalemrengimenu.add(jMenuItem5);
 
-        çık.setText("Çık");
-        çık.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem6.setText("Mavi");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                çıkActionPerformed(evt);
+                jMenuItem6ActionPerformed(evt);
             }
         });
+        kalemrengimenu.add(jMenuItem6);
 
-        jLabel3.setText("Kalınlık");
-
-        arttırma.setText("+");
-        arttırma.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem7.setText("Sarı");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                arttırmaActionPerformed(evt);
+                jMenuItem7ActionPerformed(evt);
             }
         });
+        kalemrengimenu.add(jMenuItem7);
 
-        azaltma.setText("-");
-        azaltma.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem8.setText("Gri");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                azaltmaActionPerformed(evt);
+                jMenuItem8ActionPerformed(evt);
             }
         });
+        kalemrengimenu.add(jMenuItem8);
+
+        jMenuItem9.setText("Koyu yeşil");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
+        kalemrengimenu.add(jMenuItem9);
+
+        jMenuItem10.setText("Mor");
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem10ActionPerformed(evt);
+            }
+        });
+        kalemrengimenu.add(jMenuItem10);
+
+        jMenuItem11.setText("Kahverengi");
+        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem11ActionPerformed(evt);
+            }
+        });
+        kalemrengimenu.add(jMenuItem11);
+
+        jMenuBar1.add(kalemrengimenu);
+
+        arkaplanrengimenu.setText("Arkaplan Rengi");
+
+        jMenuItem12.setText("Siyah");
+        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem12ActionPerformed(evt);
+            }
+        });
+        arkaplanrengimenu.add(jMenuItem12);
+
+        jMenuItem13.setText("Beyaz");
+        jMenuItem13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem13ActionPerformed(evt);
+            }
+        });
+        arkaplanrengimenu.add(jMenuItem13);
+
+        jMenuItem14.setText("Kırmızı");
+        jMenuItem14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem14ActionPerformed(evt);
+            }
+        });
+        arkaplanrengimenu.add(jMenuItem14);
+
+        jMenuItem15.setText("Yeşil");
+        jMenuItem15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem15ActionPerformed(evt);
+            }
+        });
+        arkaplanrengimenu.add(jMenuItem15);
+
+        jMenuItem16.setText("Mavi");
+        jMenuItem16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem16ActionPerformed(evt);
+            }
+        });
+        arkaplanrengimenu.add(jMenuItem16);
+
+        jMenuItem17.setText("Sarı");
+        jMenuItem17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem17ActionPerformed(evt);
+            }
+        });
+        arkaplanrengimenu.add(jMenuItem17);
+
+        jMenuItem18.setText("Gri");
+        jMenuItem18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem18ActionPerformed(evt);
+            }
+        });
+        arkaplanrengimenu.add(jMenuItem18);
+
+        jMenuItem19.setText("Koyu Yeşil");
+        jMenuItem19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem19ActionPerformed(evt);
+            }
+        });
+        arkaplanrengimenu.add(jMenuItem19);
+
+        jMenuItem20.setText("Mor");
+        jMenuItem20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem20ActionPerformed(evt);
+            }
+        });
+        arkaplanrengimenu.add(jMenuItem20);
+
+        jMenuItem21.setText("Kahverengi");
+        jMenuItem21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem21ActionPerformed(evt);
+            }
+        });
+        arkaplanrengimenu.add(jMenuItem21);
+
+        jMenuBar1.add(arkaplanrengimenu);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(çık, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(30, 30, 30))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(14, 14, 14)
-                                .addComponent(temizle))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(19, 19, 19)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(kırmızıkalem)
-                                    .addComponent(siyahkalem)
-                                    .addComponent(beyazkalem)))
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(4, 4, 4)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(beyaz)
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(Kırmızı, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(Siyah, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addComponent(arttırma)
-                                            .addComponent(azaltma)))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(12, 12, 12)
-                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(11, 11, 11)))))
-                        .addGap(12, 12, 12)))
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1623, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addComponent(silgi)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(temizle)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel1)
+                .addGap(2, 2, 2)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(kalınlıkarttırma)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(kalınlıkazaltma)
+                .addGap(0, 1468, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 741, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(siyahkalem)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(silgi)
+                    .addComponent(temizle)
+                    .addComponent(kalınlıkarttırma)
+                    .addComponent(kalınlıkazaltma)
+                    .addComponent(jLabel1)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(kırmızıkalem)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(beyazkalem)
-                .addGap(30, 30, 30)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Siyah)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Kırmızı)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(beyaz)
-                .addGap(35, 35, 35)
-                .addComponent(jLabel3)
-                .addGap(14, 14, 14)
-                .addComponent(arttırma)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(azaltma)
-                .addGap(170, 170, 170)
-                .addComponent(temizle)
-                .addGap(18, 18, 18)
-                .addComponent(çık)
-                .addContainerGap(122, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>
 
-    private void jPanel1MouseClicked(java.awt.event.MouseEvent evt) {
-
-    }
-int a=1;
-int renk1;
-int renk2;
-int renk3;
     private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {
         Graphics g = jPanel1.getGraphics();
         Graphics2D g2d = (Graphics2D) g;
-        Color buttonrenk = new Color(renk1, renk2, renk3);
-        g2d.setColor(buttonrenk);
         g2d.setStroke(new BasicStroke(a));
+        Color buttonrenk = new Color(renk1,renk2,renk3);
+        g2d.setColor(buttonrenk);
         PointerInfo a = MouseInfo.getPointerInfo();
         Point b = a.getLocation();
         int x = (int) b.getX();
         int y = (int) b.getY();
-        g2d.drawLine(x-130, y-25, x-130, y-25);
-    }
-
-    private void SiyahActionPerformed(java.awt.event.ActionEvent evt) {
-       jPanel1.setBackground(Color.BLACK);
-    }
-
-    private void KırmızıActionPerformed(java.awt.event.ActionEvent evt) {
-     jPanel1.setBackground(Color.RED);
-    }
-
-    private void siyahkalemActionPerformed(java.awt.event.ActionEvent evt) {
-       renk1 = 0;
-       renk2 = 0;
-       renk3 = 0;
-    }
-
-    private void beyazActionPerformed(java.awt.event.ActionEvent evt) {
-        jPanel1.setBackground(Color.WHITE);
-    }
-
-    private void çıkActionPerformed(java.awt.event.ActionEvent evt) {
-        System.exit(0);
+        g2d.drawLine(x,y-80,x,y-80);
     }
 
     private void temizleActionPerformed(java.awt.event.ActionEvent evt) {
-     repaint();
+        repaint();
     }
 
-    private void kırmızıkalemActionPerformed(java.awt.event.ActionEvent evt) {
-
-        renk1 = 255;
-       renk2 = 0;
-       renk3 = 0;
+    private void kalınlıkarttırmaActionPerformed(java.awt.event.ActionEvent evt) {
+       a++;
+       String b = Integer.toString(a);
+       jTextField1.setText(b);
     }
 
-    private void beyazkalemActionPerformed(java.awt.event.ActionEvent evt) {
-
-       renk1 = 255;
-       renk2 = 255;
-       renk3 = 255;
-    }
-
-    private void arttırmaActionPerformed(java.awt.event.ActionEvent evt) {
-        a++;
-    }
-
-    private void azaltmaActionPerformed(java.awt.event.ActionEvent evt) {
+    private void kalınlıkazaltmaActionPerformed(java.awt.event.ActionEvent evt) {
         a--;
+        String b = Integer.toString(a);
+        jTextField1.setText(b);
     }
 
+    private void jPanel1MouseClicked(java.awt.event.MouseEvent evt) {
+          Graphics g = jPanel1.getGraphics();
+        Graphics2D g2d = (Graphics2D) g;
+        g2d.setStroke(new BasicStroke(a));
+        Color buttonrenk = new Color(renk1,renk2,renk3);
+        g2d.setColor(buttonrenk);
+        PointerInfo a = MouseInfo.getPointerInfo();
+        Point b = a.getLocation();
+        int x = (int) b.getX();
+        int y = (int) b.getY();
+        g2d.drawLine(x,y-80,x,y-80);
+    }
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {
+        renk1=0;
+        renk2=255;
+        renk3=0;
+    }
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {
+        renk1=0;
+        renk2=0;
+        renk3=0;
+    }
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {
+        renk1=255;
+        renk2=255;
+        renk3=255;
+    }
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {
+        renk1=255;
+        renk2=0;
+        renk3=0;
+    }
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {
+        renk1=0;
+        renk2=0;
+        renk3=255;
+    }
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {
+        renk1=255;
+        renk2=255;
+        renk3=0;
+    }
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {
+        renk1=128;
+        renk2=128;
+        renk3=128;
+    }
+
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {
+        renk1=0;
+        renk2=128;
+        renk3=0;
+    }
+
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {
+        renk1=128;
+        renk2=0;
+        renk3=128;
+    }
+
+    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {
+        renk1 = 210;
+        renk2 = 105;
+        renk3 =30;
+    }
+
+    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {
+        renk4=0;
+        renk5=0;
+        renk6=0;
+        Color arkaplanrenk = new Color(renk4,renk5,renk6);
+                jPanel1.setBackground(arkaplanrenk);
+    }
+
+    private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {
+        renk4=255;
+        renk5=255;
+        renk6=255;
+        Color arkaplanrenk = new Color(renk4,renk5,renk6);
+                jPanel1.setBackground(arkaplanrenk);
+    }
+
+    private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {
+       renk4=255;
+        renk5=0;
+        renk6=0;
+        Color arkaplanrenk = new Color(renk4,renk5,renk6);
+                jPanel1.setBackground(arkaplanrenk);
+    }
+
+    private void jMenuItem15ActionPerformed(java.awt.event.ActionEvent evt) {
+        renk4=0;
+        renk5=255;
+        renk6=0;
+        Color arkaplanrenk = new Color(renk4,renk5,renk6);
+                jPanel1.setBackground(arkaplanrenk);
+    }
+
+    private void jMenuItem16ActionPerformed(java.awt.event.ActionEvent evt) {
+        renk4=0;
+        renk5=0;
+        renk6=255;
+        Color arkaplanrenk = new Color(renk4,renk5,renk6);
+                jPanel1.setBackground(arkaplanrenk);
+    }
+
+    private void jMenuItem17ActionPerformed(java.awt.event.ActionEvent evt) {
+        renk4=255;
+        renk5=255;
+        renk6=0;
+        Color arkaplanrenk = new Color(renk4,renk5,renk6);
+                jPanel1.setBackground(arkaplanrenk);
+    }
+
+    private void jMenuItem18ActionPerformed(java.awt.event.ActionEvent evt) {
+        renk4=128;
+        renk5=128;
+        renk6=128;
+        Color arkaplanrenk = new Color(renk4,renk5,renk6);
+                jPanel1.setBackground(arkaplanrenk);
+    }
+
+    private void jMenuItem19ActionPerformed(java.awt.event.ActionEvent evt) {
+        renk4=0;
+        renk5=128;
+        renk6=0;
+        Color arkaplanrenk = new Color(renk4,renk5,renk6);
+                jPanel1.setBackground(arkaplanrenk);
+    }
+
+    private void jMenuItem20ActionPerformed(java.awt.event.ActionEvent evt) {
+        renk4=128;
+        renk5=0;
+        renk6=128;
+        Color arkaplanrenk = new Color(renk4,renk5,renk6);
+                jPanel1.setBackground(arkaplanrenk);
+    }
+
+    private void jMenuItem21ActionPerformed(java.awt.event.ActionEvent evt) {
+       renk4=210;
+        renk5=105;
+        renk6=30;
+        Color arkaplanrenk = new Color(renk4,renk5,renk6);
+                jPanel1.setBackground(arkaplanrenk);
+    }
+
+    private void silgiActionPerformed(java.awt.event.ActionEvent evt) {
+       renk1= renk4;
+       renk2 = renk5;
+       renk3 = renk6;
+    }
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {
+       String b = Integer.toString(a);
+                jTextField1.setText(b);
+    }
+static int a=4;
+int renk1;
+int renk2;
+int renk3;
+int renk4=255;
+int renk5=255;
+int renk6=255;
     /**
      * @param args the command line arguments
      */
@@ -360,29 +609,50 @@ int renk3;
 
 
     // Variables declaration - do not modify
-    private javax.swing.JButton Kırmızı;
-    private javax.swing.JButton Siyah;
-    private javax.swing.JButton arttırma;
-    private javax.swing.JButton azaltma;
-    private javax.swing.JButton beyaz;
-    private javax.swing.JButton beyazkalem;
+    private javax.swing.JMenu arkaplanrengimenu;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem10;
+    private javax.swing.JMenuItem jMenuItem11;
+    private javax.swing.JMenuItem jMenuItem12;
+    private javax.swing.JMenuItem jMenuItem13;
+    private javax.swing.JMenuItem jMenuItem14;
+    private javax.swing.JMenuItem jMenuItem15;
+    private javax.swing.JMenuItem jMenuItem16;
+    private javax.swing.JMenuItem jMenuItem17;
+    private javax.swing.JMenuItem jMenuItem18;
+    private javax.swing.JMenuItem jMenuItem19;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem20;
+    private javax.swing.JMenuItem jMenuItem21;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JPopupMenu jPopupMenu2;
     private javax.swing.JPopupMenu jPopupMenu3;
-    private javax.swing.JButton kırmızıkalem;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JMenu kalemrengimenu;
+    private javax.swing.JButton kalınlıkarttırma;
+    private javax.swing.JButton kalınlıkazaltma;
     private java.awt.Menu menu1;
     private java.awt.Menu menu2;
     private java.awt.Menu menu3;
     private java.awt.Menu menu4;
     private java.awt.MenuBar menuBar1;
     private java.awt.MenuBar menuBar2;
-    private javax.swing.JButton siyahkalem;
+    private javax.swing.JButton silgi;
     private javax.swing.JButton temizle;
-    private javax.swing.JButton çık;
     // End of variables declaration
 
     private Color setColor(int i, int i0, int i1) {
