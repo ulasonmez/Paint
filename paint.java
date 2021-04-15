@@ -6,6 +6,10 @@ import java.awt.Graphics2D;
 import java.awt.MouseInfo;
 import java.awt.Point;
 import java.awt.PointerInfo;
+import java.awt.geom.Path2D;
+import static java.lang.Math.cos;
+import static java.lang.Math.pow;
+import static java.lang.Math.sin;
 
 
 /*
@@ -49,6 +53,7 @@ public class paint extends javax.swing.JFrame {
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu4 = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
+        jMenuItem22 = new javax.swing.JMenuItem();
         jButton1 = new javax.swing.JButton();
         silgi = new javax.swing.JButton();
         temizle = new javax.swing.JButton();
@@ -57,6 +62,7 @@ public class paint extends javax.swing.JFrame {
         kalınlıkazaltma = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         kalemrengimenu = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -80,6 +86,11 @@ public class paint extends javax.swing.JFrame {
         jMenuItem19 = new javax.swing.JMenuItem();
         jMenuItem20 = new javax.swing.JMenuItem();
         jMenuItem21 = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem23 = new javax.swing.JMenuItem();
+        jMenuItem24 = new javax.swing.JMenuItem();
+        jMenuItem25 = new javax.swing.JMenuItem();
+        jMenuItem26 = new javax.swing.JMenuItem();
 
         menu1.setLabel("File");
         menuBar1.add(menu1);
@@ -100,6 +111,8 @@ public class paint extends javax.swing.JFrame {
 
         jMenu5.setText("Edit");
         jMenuBar2.add(jMenu5);
+
+        jMenuItem22.setText("jMenuItem22");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Paint");
@@ -163,6 +176,13 @@ public class paint extends javax.swing.JFrame {
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("Kalem");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
             }
         });
 
@@ -334,6 +354,42 @@ public class paint extends javax.swing.JFrame {
 
         jMenuBar1.add(arkaplanrengimenu);
 
+        jMenu1.setText("Şekiller");
+
+        jMenuItem23.setText("Kare");
+        jMenuItem23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem23ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem23);
+
+        jMenuItem24.setText("Üçgen");
+        jMenuItem24.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem24ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem24);
+
+        jMenuItem25.setText("Daire");
+        jMenuItem25.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem25ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem25);
+
+        jMenuItem26.setText("Yıldız");
+        jMenuItem26.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem26ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem26);
+
+        jMenuBar1.add(jMenu1);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -341,18 +397,20 @@ public class paint extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(silgi)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(silgi, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(4, 4, 4)
                 .addComponent(temizle)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel1)
-                .addGap(2, 2, 2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(kalınlıkarttırma)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(kalınlıkazaltma)
-                .addGap(0, 1468, Short.MAX_VALUE))
+                .addContainerGap(1370, Short.MAX_VALUE))
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
@@ -364,29 +422,113 @@ public class paint extends javax.swing.JFrame {
                     .addComponent(kalınlıkarttırma)
                     .addComponent(kalınlıkazaltma)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>
-
-    private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {
-        Graphics g = jPanel1.getGraphics();
+int cizimsecmi=1;
+int sekil=0;static int a=4;
+int renk1;
+int renk2;
+int renk3;
+int renk4=255;
+int renk5=255;
+int renk6=255;
+    void kalem(int nokta1,int nokta2){
+     Graphics g = jPanel1.getGraphics();
         Graphics2D g2d = (Graphics2D) g;
-        g2d.setStroke(new BasicStroke(a));
+            g2d.setStroke(new BasicStroke(a));
         Color buttonrenk = new Color(renk1,renk2,renk3);
         g2d.setColor(buttonrenk);
-        PointerInfo a = MouseInfo.getPointerInfo();
+        g2d.drawLine(nokta1,nokta2,nokta1,nokta2);
+}
+    void silgi(int nokta1,int nokta2){
+        Graphics g = jPanel1.getGraphics();
+        Graphics2D g2d = (Graphics2D) g;
+            g2d.setStroke(new BasicStroke(a));
+        Color buttonrenk = new Color(renk4,renk5,renk6);
+        g2d.setColor(buttonrenk);
+        g2d.drawLine(nokta1,nokta2,nokta1,nokta2);
+    }
+    void kare(int nokta1,int nokta2){
+        Graphics g = jPanel1.getGraphics();
+        Graphics2D g2d = (Graphics2D) g;
+            g2d.setStroke(new BasicStroke(a));
+            Color buttonrenk = new Color(renk1,renk2,renk3);
+            g2d.setColor(buttonrenk);
+            PointerInfo a = MouseInfo.getPointerInfo();
         Point b = a.getLocation();
         int x = (int) b.getX();
         int y = (int) b.getY();
-        g2d.drawLine(x,y-80,x,y-80);
+            g2d.drawLine(nokta1-60,nokta2-60,nokta1+60,nokta2-60);
+            g2d.drawLine(nokta1-60, nokta2-60, nokta1-60, nokta2+60);
+            g2d.drawLine(nokta1-60,nokta2+60,nokta1+60,nokta2+60);
+            g2d.drawLine(nokta1+60,nokta2-60,nokta1+60,nokta2+60);
+
+    }
+    void ucgen(int nokta1,int nokta2){
+        Graphics g = jPanel1.getGraphics();
+        Graphics2D g2d = (Graphics2D) g;
+            g2d.setStroke(new BasicStroke(a));
+            Color buttonrenk = new Color(renk1,renk2,renk3);
+            g2d.setColor(buttonrenk);
+        g2d.drawLine(nokta1,nokta2-60,nokta1-60,nokta2+60);
+        g2d.drawLine(nokta1,nokta2-60,nokta1+60,nokta2+60);
+        g2d.drawLine(nokta1-60,nokta2+60,nokta1+60,nokta2+60);
+    }
+    void daire(int nokta1,int nokta2){
+        Graphics g = jPanel1.getGraphics();
+        Graphics2D g2d = (Graphics2D) g;
+            g2d.setStroke(new BasicStroke(a));
+            Color buttonrenk = new Color(renk1,renk2,renk3);
+            g2d.setColor(buttonrenk);
+        g2d.drawOval(nokta1-60,nokta2-60,120,120);
+    }
+    void yildiz(int x,int y){
+        Graphics g = jPanel1.getGraphics();
+        Graphics2D g2d = (Graphics2D) g;
+            g2d.setStroke(new BasicStroke(a));
+            Color buttonrenk = new Color(renk1,renk2,renk3);
+            g2d.setColor(buttonrenk);
+            //1
+            g2d.drawLine(x,y-20,x+10,y);
+            //2
+            g2d.drawLine(x+10,y,x+30,y);
+            //3
+            g2d.drawLine(x+30,y,x+10,y+10);
+            //4
+            g2d.drawLine(x+10,y+10,x+20,y+30);
+            //5
+            g2d.drawLine(x+20,y+30,x,y+20);
+            //6
+            g2d.drawLine(x,y+20,x-20,y+30);
+            //7
+            g2d.drawLine(x-20,y+30,x-10,y+10);
+            //8
+            g2d.drawLine(x-10,y+10,x-30,y);
+            //9
+            g2d.drawLine(x-30,y,x-10,y);
+            //10
+            g2d.drawLine(x-10,y,x,y-20);
+
+    }
+    private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {
+       if(cizimsecmi==1){
+           kalem(evt.getX(),evt.getY());
+       }
+       else if(cizimsecmi == 2){
+           silgi(evt.getX(),evt.getY());
+       }
+
     }
 
     private void temizleActionPerformed(java.awt.event.ActionEvent evt) {
         repaint();
+        cizimsecmi=1;
     }
 
     private void kalınlıkarttırmaActionPerformed(java.awt.event.ActionEvent evt) {
@@ -402,76 +544,95 @@ public class paint extends javax.swing.JFrame {
     }
 
     private void jPanel1MouseClicked(java.awt.event.MouseEvent evt) {
-          Graphics g = jPanel1.getGraphics();
-        Graphics2D g2d = (Graphics2D) g;
-        g2d.setStroke(new BasicStroke(a));
-        Color buttonrenk = new Color(renk1,renk2,renk3);
-        g2d.setColor(buttonrenk);
-        PointerInfo a = MouseInfo.getPointerInfo();
-        Point b = a.getLocation();
-        int x = (int) b.getX();
-        int y = (int) b.getY();
-        g2d.drawLine(x,y-80,x,y-80);
+          if(cizimsecmi==1){
+           kalem(evt.getX(),evt.getY());
+       }
+       else if(cizimsecmi == 2){
+           silgi(evt.getX(),evt.getY());
+       }
+         else if(cizimsecmi==3){
+           kare(evt.getX(),evt.getY());
+       }
+         else if(cizimsecmi == 4){
+             ucgen(evt.getX(),evt.getY());
+         }
+          else if(cizimsecmi == 5){
+             daire(evt.getX(),evt.getY());
+         }
+
+          else if(cizimsecmi == 7){
+              yildiz(evt.getX(),evt.getY());
+          }
     }
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {
         renk1=0;
         renk2=255;
         renk3=0;
+
     }
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {
         renk1=0;
         renk2=0;
         renk3=0;
+
     }
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {
         renk1=255;
         renk2=255;
         renk3=255;
+
     }
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {
         renk1=255;
         renk2=0;
         renk3=0;
+
     }
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {
         renk1=0;
         renk2=0;
         renk3=255;
+
     }
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {
         renk1=255;
         renk2=255;
         renk3=0;
+
     }
 
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {
         renk1=128;
         renk2=128;
         renk3=128;
+
     }
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {
         renk1=0;
         renk2=128;
         renk3=0;
+
     }
 
     private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {
         renk1=128;
         renk2=0;
         renk3=128;
+
     }
 
     private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {
         renk1 = 210;
         renk2 = 105;
         renk3 =30;
+
     }
 
     private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -555,22 +716,35 @@ public class paint extends javax.swing.JFrame {
     }
 
     private void silgiActionPerformed(java.awt.event.ActionEvent evt) {
-       renk1= renk4;
-       renk2 = renk5;
-       renk3 = renk6;
+
+        cizimsecmi=2;
     }
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {
        String b = Integer.toString(a);
                 jTextField1.setText(b);
     }
-static int a=4;
-int renk1;
-int renk2;
-int renk3;
-int renk4=255;
-int renk5=255;
-int renk6=255;
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
+        cizimsecmi=1;
+    }
+
+    private void jMenuItem23ActionPerformed(java.awt.event.ActionEvent evt) {
+        cizimsecmi = 3;
+    }
+
+    private void jMenuItem24ActionPerformed(java.awt.event.ActionEvent evt) {
+        cizimsecmi = 4;
+    }
+
+    private void jMenuItem25ActionPerformed(java.awt.event.ActionEvent evt) {
+        cizimsecmi = 5;
+    }
+
+    private void jMenuItem26ActionPerformed(java.awt.event.ActionEvent evt) {
+        cizimsecmi = 7;
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -611,7 +785,9 @@ int renk6=255;
     // Variables declaration - do not modify
     private javax.swing.JMenu arkaplanrengimenu;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
@@ -630,6 +806,11 @@ int renk6=255;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem20;
     private javax.swing.JMenuItem jMenuItem21;
+    private javax.swing.JMenuItem jMenuItem22;
+    private javax.swing.JMenuItem jMenuItem23;
+    private javax.swing.JMenuItem jMenuItem24;
+    private javax.swing.JMenuItem jMenuItem25;
+    private javax.swing.JMenuItem jMenuItem26;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
